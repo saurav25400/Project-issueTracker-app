@@ -1,0 +1,6 @@
+# To delete node modules
+node_modules/
+#to not consider notes
+/notes.txt
+#To not consider environment files
+/.env
