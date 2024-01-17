@@ -7,6 +7,7 @@ launch().catch(err => console.log(`Error talking to MongoDB : ${err}`));
 async function launch(){
     // await mongoose.connect("mongodb://127.0.0.1:27017/issue_tracker");
     await mongoose.connect(URI);
+    console.log("connected to mongodb successfully");
 }
 
 const db = mongoose.connection.once('open', ()=>{
