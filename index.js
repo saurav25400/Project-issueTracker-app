@@ -1,12 +1,11 @@
 require("dotenv").config();
 const express = require("express");
-const port = 8000;
-const app = express();
 const dataBase = require('./config/mongoose');
 const bodyParser = require('body-parser');
 const expressLayouts = require('express-ejs-layouts');
 const sassMiddleware =require('node-sass-middleware');
 
+const app = express();
 app.use(sassMiddleware({
     src: './assets/scss',
     dest: './assets/css',
@@ -33,7 +32,7 @@ app.set('views', './views');
 
 // Redirecting all requests to router
 app.use('/', require('./routes'));
-
+const port = 8000;
 app.listen(port, (err) => {
     if (err) {
         console.log(`Couldn't start the server : ${err}`);
